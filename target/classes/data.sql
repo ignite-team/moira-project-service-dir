@@ -1,0 +1,2 @@
+INSERT INTO dir_pais(id_pais, nombre, codigo_iso2, codigo_iso3, codigo_uni, fecha_creacion, fecha_modificacion) VALUES(1,'ESPAÑA','ES','ESP','011',sysdate,sysdate);
+INSERT INTO dir_provincia(id_provincia, codigo_provincia, nombre, codigo_ca, nombre_ca, fecha_creacion, fecha_modificacion) VALUES(1,15,'A CORUÑA',11,'GALICIA',sysdate,sysdate);
