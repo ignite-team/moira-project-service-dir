@@ -1,5 +1,9 @@
-package es.ozona.moira.project.callejero.interfaces.rest.dto;
+package es.ozona.moira.project.callejero.process.interfaces.rest.dto;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+import es.ozona.moira.project.callejero.domain.model.entities.Pais;
 import es.ozona.moira.project.callejero.domain.model.entities.Provincia;
 
 public class ProvinciaAssembler {
@@ -24,5 +28,9 @@ public class ProvinciaAssembler {
 		res.setNombre_ca(provincia.getNombre_ca());
 
 		return res;
+	}
+	
+	public static final List<ProvinciaResource> buildFromEntities(List<Provincia> provincia){
+		return provincia.stream().map(c -> ProvinciaAssembler.buildFromEntity(c)).collect(Collectors.toList());
 	}
 }

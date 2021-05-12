@@ -18,7 +18,7 @@ import org.springframework.http.ResponseEntity;
 
 import es.ozona.moira.project.callejero.infrastructure.repositories.PaisRepository;
 import es.ozona.moira.project.callejero.process.interfaces.rest.DirController;
-import es.ozona.moira.project.callejero.interfaces.rest.dto.PaisResource;
+import es.ozona.moira.project.callejero.process.interfaces.rest.dto.PaisResource;
 import es.ozona.moira.project.callejero.domain.model.entities.Pais;
 
 @SpringBootTest
@@ -43,14 +43,14 @@ public class PaisControllerTest {
 
 	@Test
 	public void HttpOkNotResults() throws Exception {
-		ResponseEntity<List<PaisResource>> response = dirController.list(1L);
+		ResponseEntity<List<PaisResource>> response = dirController.listPais(1L);
 
 		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
 	}
 
 	@Test
 	public void CorrectContent() throws Exception {
-		ResponseEntity<List<PaisResource>> response = dirController.list(1L);
+		ResponseEntity<List<PaisResource>> response = dirController.listPais(1L);
 		List<PaisResource> content = response.getBody();
 		PaisResource pais = content.get(0);
 		

@@ -1,4 +1,4 @@
-package es.ozona.moira.project.callejero.interfaces.rest.dto;
+package es.ozona.moira.project.callejero.process.interfaces.rest.dto;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -8,7 +8,7 @@ import java.util.Set;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-public class ProvinciaResource implements Serializable {
+public class PaisResource implements Serializable{
 
 	/**
 	 * 
@@ -18,37 +18,40 @@ public class ProvinciaResource implements Serializable {
 	@NotNull
 	private Long id;
 	
-	@NotNull
-	private Long codigo_provincia;
-	
 	@NotEmpty
 	private String nombre;
 	
-	private Long codigo_ca;
+	@NotEmpty
+	private String codigo_iso2;
 	
-	private String nombre_ca;
+	@NotEmpty
+	private String codigo_iso3;
+	
+	@NotEmpty
+	private String codigo_uni;
 	
 	private Date fechaCreacion;
-
+	
 	private Date fechaModificacion;
 	
-	public ProvinciaResource() {
+	public PaisResource() {
 		
 	}
-
-	public ProvinciaResource(@NotNull @NotEmpty String nombre, Long codigo_ca, String nombre_ca, Date fechaCreacion,
-			Date fechaModificacion) {
-		super();
-		this.nombre = nombre;
-		this.codigo_ca = codigo_ca;
-		this.nombre_ca = nombre_ca;
-		this.fechaCreacion = fechaCreacion;
-		this.fechaModificacion = fechaModificacion;
+	
+	public PaisResource(Long id) {
+		this.id = id;
 	}
 
-	public ProvinciaResource(@NotNull Long id) {
+
+	public PaisResource(@NotEmpty String nombre, @NotEmpty String codigo_iso2, @NotEmpty String codigo_iso3,
+			@NotEmpty String codigo_uni, Date fechaCreacion, Date fechaModificacion) {
 		super();
-		this.id = id;
+		this.nombre = nombre;
+		this.codigo_iso2 = codigo_iso2;
+		this.codigo_iso3 = codigo_iso3;
+		this.codigo_uni = codigo_uni;
+		this.fechaCreacion = fechaCreacion;
+		this.fechaModificacion = fechaModificacion;
 	}
 
 	public Long getId() {
@@ -67,20 +70,28 @@ public class ProvinciaResource implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public Long getCodigo_ca() {
-		return codigo_ca;
+	public String getCodigo_iso2() {
+		return codigo_iso2;
 	}
 
-	public void setCodigo_ca(Long codigo_ca) {
-		this.codigo_ca = codigo_ca;
+	public void setCodigo_iso2(String codigo_iso2) {
+		this.codigo_iso2 = codigo_iso2;
 	}
 
-	public String getNombre_ca() {
-		return nombre_ca;
+	public String getCodigo_iso3() {
+		return codigo_iso3;
 	}
 
-	public void setNombre_ca(String nombre_ca) {
-		this.nombre_ca = nombre_ca;
+	public void setCodigo_iso3(String codigo_iso3) {
+		this.codigo_iso3 = codigo_iso3;
+	}
+
+	public String getCodigo_uni() {
+		return codigo_uni;
+	}
+
+	public void setCodigo_uni(String codigo_uni) {
+		this.codigo_uni = codigo_uni;
 	}
 
 	public Date getFechaCreacion() {
@@ -103,5 +114,6 @@ public class ProvinciaResource implements Serializable {
 		return serialVersionUID;
 	}
 
+	
 	
 }

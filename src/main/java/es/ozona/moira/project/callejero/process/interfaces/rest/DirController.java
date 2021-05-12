@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 import es.ozona.moira.project.callejero.domain.model.entities.Pais;
 import es.ozona.moira.project.callejero.domain.model.entities.Provincia;
 import es.ozona.moira.project.callejero.infrastructure.repositories.PaisRepository;
-import es.ozona.moira.project.callejero.interfaces.rest.dto.PaisResource;
-import es.ozona.moira.project.callejero.interfaces.rest.dto.PaisAssembler;
+import es.ozona.moira.project.callejero.infrastructure.repositories.ProvinciaRepository;
+import es.ozona.moira.project.callejero.process.interfaces.rest.dto.PaisResource;
+import es.ozona.moira.project.callejero.process.interfaces.rest.dto.PaisAssembler;
+import es.ozona.moira.project.callejero.process.interfaces.rest.dto.ProvinciaResource;
+import es.ozona.moira.project.callejero.process.interfaces.rest.dto.ProvinciaAssembler;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -31,15 +34,23 @@ import io.swagger.annotations.Tag;
 public class DirController {
 	
 	@Autowired
-	private PaisRepository repository;
+	private PaisRepository pais_repository;
+	@Autowired
+	private ProvinciaRepository prov_repository;
 	
-	@GetMapping("/pais/{id}")
+	@GetMapping("/pais")
 	@ResponseStatus(code = HttpStatus.OK)
 	@ApiOperation(value = "Lista los paises.", notes = "")
 	@ApiResponses(value = {@ApiResponse(code = 200, message = "OK", response = PaisResource.class), @ApiResponse(code = 400, message = "Bad Request")})
-	public ResponseEntity<List<PaisResource>> list(@ApiParam(required = true) @RequestParam(name = "identidad", defaultValue = "1") Long idPais){
-		Pais pais = new Pais(idPais);
-		
-		return ResponseEntity.ok(PaisAssembler.buildFromEntities(repository.findAll()));
+	public ResponseEntity<List<PaisResource>> listPais(@ApiParam(required = true) @RequestParam(name = "identidad", defaultValue = "1") Long idPais){
+		return ResponseEntity.ok(PaisAssembler.buildFromEntities(pais_repository.findAll()));
+	}
+	
+	@GetMapping("/provincia")
+	@ResponseStatus(code = HttpStatus.OK)
+	@ApiOperation(value = "Lista las provincias.", notes = "")
+	@ApiResponses(value = {@ApiResponse(code = 200, message = "OK", response = ProvinciaResource.class), @ApiResponse(code = 400, message = "Bad Request")})
+	public ResponseEntity<List<ProvinciaResource>> listProvincia(@ApiParam(required = true) @RequestParam(name = "identidad", defaultValue = "1") Long idProvincia){
+		return ResponseEntity.ok(ProvinciaAssembler.buildFromEntities(prov_repository.findAll()));
 	}
 }

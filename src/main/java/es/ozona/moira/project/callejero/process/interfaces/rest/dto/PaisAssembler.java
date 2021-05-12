@@ -1,4 +1,4 @@
-package es.ozona.moira.project.callejero.interfaces.rest.dto;
+package es.ozona.moira.project.callejero.process.interfaces.rest.dto;
 
 import java.util.List;
 import java.util.stream.Collectors;
