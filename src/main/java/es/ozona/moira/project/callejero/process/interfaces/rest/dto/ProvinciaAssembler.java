@@ -21,6 +21,7 @@ public class ProvinciaAssembler {
 			return null;
 
 		final ProvinciaResource res = new ProvinciaResource(provincia.getId());
+		res.setCodigo_provincia(provincia.getCodigo_provincia());
 		res.setCodigo_ca(provincia.getCodigo_ca());
 		res.setFechaCreacion(provincia.getFechaCreacion());
 		res.setFechaModificacion(provincia.getFechaModificacion());
