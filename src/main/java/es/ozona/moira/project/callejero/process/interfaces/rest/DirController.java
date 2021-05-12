@@ -28,7 +28,7 @@ import io.swagger.annotations.Tag;
 @RequestMapping("/api/v1")
 @Api(value = "Calles Service API.", tags = "API de Calles")
 @SwaggerDefinition(tags = { @Tag(name = "API de calles.", description = "Operaciones para consulta y gestión de calles.")})
-public class CallejeroController {
+public class DirController {
 	
 	@Autowired
 	private PaisRepository repository;
