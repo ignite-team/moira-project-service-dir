@@ -87,3 +87,5 @@ En Run configurations creamos una ejecución definiendo el workspace sobre el qe
 
 A continuación le damos a Apply y a Run para desplegar la aplicación. El servidor SOnar deberá estar corriendo en localhost:9000. 
 
+## Notas: 
+IMPORTANTE: El Java Service Wrapper en la versión de 64-bit de Windows no esta disponible en la edición Comunidad. 
