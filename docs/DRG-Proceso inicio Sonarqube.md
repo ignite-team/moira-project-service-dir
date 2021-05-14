@@ -1,8 +1,8 @@
-#Proceso Inicio Sonarqube
+# Proceso Inicio Sonarqube
 
 *2021/05/14 by Ozona - developer reference guide*
 
-##1. Instalación de SonarQube
+## 1. Instalación de SonarQube
 Los pasos a seguir son: 
 
 - Descargar SonarQube.
@@ -31,8 +31,8 @@ Los pasos a seguir son:
 
 Notas: Se puede cambiar el puerto en sonar.properties que se encuentra en la carpeta conf de la carpeta sonarqube que hayamos descomprimido. 
 
-##2. Proyecto Maven en Eclipse
-###2.1 Configuramos el archivo pom.xml
+## 2. Proyecto Maven en Eclipse
+### 2.1 Configuramos el archivo pom.xml
 Deberemos asegurarnos de que el bloque Properties contiene la configuración de SonarQube necesaria para poder hacer uso de todas sus funcionalidades y definir el lenguaje que va analizar. 
 
 El properties sería: 
@@ -78,7 +78,7 @@ En build:
 
 A continuación haremos un updateMaven del proyecto. 
 
-###2.2 Ejecución de Maven
+### 2.2 Ejecución de Maven
 Realizamos una ejecución de proyecto personalizada. 
 
 En este se hará un maven clean, maven install y se lanzará sonar:sonar. 
