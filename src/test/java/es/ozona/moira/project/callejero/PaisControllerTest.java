@@ -56,9 +56,9 @@ public class PaisControllerTest {
 		
 		assertTrue(content.size() == 1);
 		assertEquals(pais.getNombre(), "nombre");
-		assertEquals(pais.getCodigo_iso2(), "codigo_iso2");
-		assertEquals(pais.getCodigo_iso3(), "codigo_iso3");
-		assertEquals(pais.getCodigo_uni(), "codigo_uni");
+		assertEquals(pais.getCodigoIso2(), "codigo_iso2");
+		assertEquals(pais.getCodigoIso3(), "codigo_iso3");
+		assertEquals(pais.getCodigoUni(), "codigo_uni");
 		assertEquals(pais.getFechaCreacion(), date);
 		assertEquals(pais.getFechaModificacion(), date);
 	}

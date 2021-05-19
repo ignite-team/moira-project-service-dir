@@ -23,19 +23,19 @@ public class Provincia implements Serializable {
 	@Column(name = "id_provincia")
 	private Long id;
 
-	@Column
+	@Column(name = "codigo_provincia")
 	@NotNull
-	private Long codigo_provincia;
+	private Long codigoProvincia;
 	
 	@Column
 	@NotEmpty
 	private String nombre;
 
-	@Column
-	private Long codigo_ca;
+	@Column(name = "codigo_ca")
+	private Long codigoCa;
 	
-	@Column
-	private String nombre_ca;
+	@Column(name = "nombre_ca")
+	private String nombreCa;
 
 	@Column(name = "fecha_creacion")
 	private Date fechaCreacion;
@@ -47,13 +47,13 @@ public class Provincia implements Serializable {
 		super();
 	}
 
-	public Provincia(@NotNull Long codigo_provincia, @NotEmpty String nombre, Long codigo_ca, String nombre_ca,
+	public Provincia(@NotNull Long codigoProvincia, @NotEmpty String nombre, Long codigoCa, String nombreCa,
 			Date fechaCreacion, Date fechaModificacion) {
 		super();
-		this.codigo_provincia = codigo_provincia;
+		this.codigoProvincia = codigoProvincia;
 		this.nombre = nombre;
-		this.codigo_ca = codigo_ca;
-		this.nombre_ca = nombre_ca;
+		this.codigoCa = codigoCa;
+		this.nombreCa = nombreCa;
 		this.fechaCreacion = fechaCreacion;
 		this.fechaModificacion = fechaModificacion;
 	}
@@ -71,12 +71,12 @@ public class Provincia implements Serializable {
 		this.id = id;
 	}
 
-	public Long getCodigo_provincia() {
-		return codigo_provincia;
+	public Long getCodigoProvincia() {
+		return codigoProvincia;
 	}
 
-	public void setCodigo_provincia(Long codigo_provincia) {
-		this.codigo_provincia = codigo_provincia;
+	public void setCodigoProvincia(Long codigoProvincia) {
+		this.codigoProvincia = codigoProvincia;
 	}
 
 	public String getNombre() {
@@ -87,20 +87,20 @@ public class Provincia implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public Long getCodigo_ca() {
-		return codigo_ca;
+	public Long getCodigoCa() {
+		return codigoCa;
 	}
 
-	public void setCodigo_ca(Long codigo_ca) {
-		this.codigo_ca = codigo_ca;
+	public void setCodigoCa(Long codigoCa) {
+		this.codigoCa = codigoCa;
 	}
 
-	public String getNombre_ca() {
-		return nombre_ca;
+	public String getNombreCa() {
+		return nombreCa;
 	}
 
-	public void setNombre_ca(String nombre_ca) {
-		this.nombre_ca = nombre_ca;
+	public void setNombreCa(String nombreCa) {
+		this.nombreCa = nombreCa;
 	}
 
 	public Date getFechaCreacion() {

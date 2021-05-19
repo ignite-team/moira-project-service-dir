@@ -21,9 +21,9 @@ public class PaisAssembler {
 		
 		final PaisResource res = new PaisResource(pais.getId());
 		res.setNombre(pais.getNombre());
-		res.setCodigo_iso2(pais.getCodigo_iso2());
-		res.setCodigo_iso3(pais.getCodigo_iso3());
-		res.setCodigo_uni(pais.getCodigo_uni());
+		res.setCodigoIso2(pais.getCodigoIso2());
+		res.setCodigoIso3(pais.getCodigoIso3());
+		res.setCodigoUni(pais.getCodigoUni());
 		res.setFechaCreacion(pais.getFechaCreacion());
 		res.setFechaModificacion(pais.getFechaModificacion());
 		

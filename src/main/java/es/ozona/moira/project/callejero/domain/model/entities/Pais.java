@@ -24,16 +24,16 @@ public class Pais implements Serializable {
 	private String nombre;
 	
 	@NotEmpty
-	@Column
-	private String codigo_iso2;
+	@Column(name = "codigo_iso2")
+	private String codigoIso2;
 	
 	@NotEmpty
-	@Column
-	private String codigo_iso3;
+	@Column(name = "codigo_iso3")
+	private String codigoIso3;
 	
 	@NotEmpty
-	@Column
-	private String codigo_uni;
+	@Column(name = "codigo_uni")
+	private String codigoUni;
 	
 	@Column(name = "fecha_creacion")
 	private Date fechaCreacion;
@@ -46,13 +46,13 @@ public class Pais implements Serializable {
 		super();
 	}
 
-	public Pais(@NotEmpty String nombre, @NotEmpty String codigo_iso2, @NotEmpty String codigo_iso3,
-			@NotEmpty String codigo_uni, Date fechaCreacion, Date fechaModificacion) {
+	public Pais(@NotEmpty String nombre, @NotEmpty String codigoIso2, @NotEmpty String codigoIso3,
+			@NotEmpty String codigoUni, Date fechaCreacion, Date fechaModificacion) {
 		super();
 		this.nombre = nombre;
-		this.codigo_iso2 = codigo_iso2;
-		this.codigo_iso3 = codigo_iso3;
-		this.codigo_uni = codigo_uni;
+		this.codigoIso2 = codigoIso2;
+		this.codigoIso3 = codigoIso3;
+		this.codigoUni = codigoUni;
 		this.fechaCreacion = fechaCreacion;
 		this.fechaModificacion = fechaModificacion;
 	}
@@ -78,28 +78,28 @@ public class Pais implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public String getCodigo_iso2() {
-		return codigo_iso2;
+	public String getCodigoIso2() {
+		return codigoIso2;
 	}
 
-	public void setCodigo_iso2(String codigo_iso2) {
-		this.codigo_iso2 = codigo_iso2;
+	public void setCodigoIso2(String codigoIso2) {
+		this.codigoIso2 = codigoIso2;
 	}
 
-	public String getCodigo_iso3() {
-		return codigo_iso3;
+	public String getCodigoIso3() {
+		return codigoIso3;
 	}
 
-	public void setCodigo_iso3(String codigo_iso3) {
-		this.codigo_iso3 = codigo_iso3;
+	public void setCodigoIso3(String codigoIso3) {
+		this.codigoIso3 = codigoIso3;
 	}
 
-	public String getCodigo_uni() {
-		return codigo_uni;
+	public String getCodigoUni() {
+		return codigoUni;
 	}
 
-	public void setCodigo_uni(String codigo_uni) {
-		this.codigo_uni = codigo_uni;
+	public void setCodigoUni(String codigoUni) {
+		this.codigoUni = codigoUni;
 	}
 
 	public Date getFechaCreacion() {

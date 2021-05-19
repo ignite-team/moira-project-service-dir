@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.ozona.moira.project.callejero.domain.model.entities.Pais;
-import es.ozona.moira.project.callejero.domain.model.entities.Provincia;
 import es.ozona.moira.project.callejero.infrastructure.repositories.PaisRepository;
 import es.ozona.moira.project.callejero.infrastructure.repositories.ProvinciaRepository;
 import es.ozona.moira.project.callejero.process.interfaces.rest.dto.PaisResource;
@@ -34,16 +32,16 @@ import io.swagger.annotations.Tag;
 public class DirController {
 	
 	@Autowired
-	private PaisRepository pais_repository;
+	private PaisRepository paisRepository;
 	@Autowired
-	private ProvinciaRepository prov_repository;
+	private ProvinciaRepository provRepository;
 	
 	@GetMapping("/pais")
 	@ResponseStatus(code = HttpStatus.OK)
 	@ApiOperation(value = "Lista los paises.", notes = "")
 	@ApiResponses(value = {@ApiResponse(code = 200, message = "OK", response = PaisResource.class), @ApiResponse(code = 400, message = "Bad Request")})
 	public ResponseEntity<List<PaisResource>> listPais(@ApiParam(required = true) @RequestParam(name = "identidad", defaultValue = "1") Long idPais){
-		return ResponseEntity.ok(PaisAssembler.buildFromEntities(pais_repository.findAll()));
+		return ResponseEntity.ok(PaisAssembler.buildFromEntities(paisRepository.findAll()));
 	}
 	
 	@GetMapping("/provincia")
@@ -51,6 +49,6 @@ public class DirController {
 	@ApiOperation(value = "Lista las provincias.", notes = "")
 	@ApiResponses(value = {@ApiResponse(code = 200, message = "OK", response = ProvinciaResource.class), @ApiResponse(code = 400, message = "Bad Request")})
 	public ResponseEntity<List<ProvinciaResource>> listProvincia(@ApiParam(required = true) @RequestParam(name = "identidad", defaultValue = "1") Long idProvincia){
-		return ResponseEntity.ok(ProvinciaAssembler.buildFromEntities(prov_repository.findAll()));
+		return ResponseEntity.ok(ProvinciaAssembler.buildFromEntities(provRepository.findAll()));
 	}
 }

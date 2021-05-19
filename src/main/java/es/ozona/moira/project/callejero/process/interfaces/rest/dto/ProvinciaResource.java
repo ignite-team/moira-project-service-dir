@@ -2,8 +2,6 @@ package es.ozona.moira.project.callejero.process.interfaces.rest.dto;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -19,14 +17,14 @@ public class ProvinciaResource implements Serializable {
 	private Long id;
 	
 	@NotNull
-	private Long codigo_provincia;
+	private Long codigoProvincia;
 	
 	@NotEmpty
 	private String nombre;
 	
-	private Long codigo_ca;
+	private Long codigoCa;
 	
-	private String nombre_ca;
+	private String nombreCa;
 	
 	private Date fechaCreacion;
 
@@ -36,13 +34,13 @@ public class ProvinciaResource implements Serializable {
 		
 	}
 
-	public ProvinciaResource(@NotNull Long codigo_provincia, @NotEmpty String nombre, Long codigo_ca, String nombre_ca,
+	public ProvinciaResource(@NotNull Long codigoProvincia, @NotEmpty String nombre, Long codigoCa, String nombreCa,
 			Date fechaCreacion, Date fechaModificacion) {
 		super();
-		this.codigo_provincia = codigo_provincia;
+		this.codigoProvincia = codigoProvincia;
 		this.nombre = nombre;
-		this.codigo_ca = codigo_ca;
-		this.nombre_ca = nombre_ca;
+		this.codigoCa = codigoCa;
+		this.nombreCa = nombreCa;
 		this.fechaCreacion = fechaCreacion;
 		this.fechaModificacion = fechaModificacion;
 	}
@@ -70,32 +68,32 @@ public class ProvinciaResource implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public Long getCodigo_ca() {
-		return codigo_ca;
+	public Long getCodigoCa() {
+		return codigoCa;
 	}
 
-	public void setCodigo_ca(Long codigo_ca) {
-		this.codigo_ca = codigo_ca;
+	public void setCodigoCa(Long codigoCa) {
+		this.codigoCa = codigoCa;
 	}
 
-	public String getNombre_ca() {
-		return nombre_ca;
+	public String getNombreCa() {
+		return nombreCa;
 	}
 
-	public void setNombre_ca(String nombre_ca) {
-		this.nombre_ca = nombre_ca;
+	public void setNombreCa(String nombreCa) {
+		this.nombreCa = nombreCa;
 	}
 
 	public Date getFechaCreacion() {
 		return fechaCreacion;
 	}
 
-	public Long getCodigo_provincia() {
-		return codigo_provincia;
+	public Long getCodigoProvincia() {
+		return codigoProvincia;
 	}
 
-	public void setCodigo_provincia(Long codigo_provincia) {
-		this.codigo_provincia = codigo_provincia;
+	public void setCodigoProvincia(Long codigoProvincia) {
+		this.codigoProvincia = codigoProvincia;
 	}
 
 	public void setFechaCreacion(Date fechaCreacion) {

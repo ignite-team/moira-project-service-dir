@@ -55,10 +55,10 @@ public class ProvinciaControllerTest {
 		ProvinciaResource prov = content.get(0);
 		
 		assertTrue(content.size() == 1);
-		assertEquals(prov.getCodigo_provincia(), null);
+		assertEquals(prov.getCodigoProvincia(), null);
 		assertEquals(prov.getNombre(), "nombre");
-		assertEquals(prov.getCodigo_ca(), null);
-		assertEquals(prov.getNombre_ca(), "nombre_ca");
+		assertEquals(prov.getCodigoCa(), null);
+		assertEquals(prov.getNombreCa(), "nombre_ca");
 		assertEquals(prov.getFechaCreacion(), date);
 		assertEquals(prov.getFechaModificacion(), date);
 	}
